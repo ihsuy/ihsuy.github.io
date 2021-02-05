@@ -75,7 +75,7 @@ class About extends Component {
 
         <h2 id="about">About me</h2>
         <p>
-          I am a first year Ph.D. student in Computer Science at the University
+          I am a Ph.D. student in Computer Science at the University
           of Tokyo. I am interested in training dynamics and generalization of
           deep neural networks, particularly through statistical analysis and
           visualization. I am fortunate to be advised by{" "}
