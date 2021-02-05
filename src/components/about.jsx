@@ -293,12 +293,12 @@ class About extends Component {
           </ul>
         </div>
 
-        <GitHubCalendar
+        {/* <GitHubCalendar
           username="ihsuy"
           style={{ marginLeft: "40pt" }}
           blockMargin={3}
           theme={generateGithubCalendarTheme(this.props.theme)}
-        />
+        /> */}
 
         <p style={{ marginBottom: "30px" }}> </p>
       </React.Fragment>
