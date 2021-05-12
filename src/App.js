@@ -16,8 +16,16 @@ import {
 import { GlobalStyles } from "./global";
 
 function App() {
+  // Get Season thru current month as follows (Northern Hemisphere):
+  // Winter: Dec 1st - Feb 28th
+  // Spring: March 1st - May 31th
+  // Summer: June 1st - August 31th
+  // Autumn: September 1st - November 30th
+
   const getSeason = d => Math.floor((d.getMonth() / 3)) % 4
   const season = ['winter', 'spring', 'summer', 'autumn'][getSeason(new Date())]
+
+  // Set theme automatically by current season
   const [theme, setTheme] = useState(season); 
   
   // The function that toggles between themes
