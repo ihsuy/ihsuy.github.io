@@ -272,7 +272,7 @@ class About extends Component {
               Tokyo, March 2020
             </li>
             <li>
-              Bachelor of Science in Liberal Arts and Sciences, University of
+              Bachelor of Science, University of
               Illinois at Urbana-Champaign, May 2017
             </li>
           </ul>

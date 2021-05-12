@@ -16,8 +16,10 @@ import {
 import { GlobalStyles } from "./global";
 
 function App() {
-  const [theme, setTheme] = useState("standard"); // [TODO] determine w.r.t. date
-
+  const getSeason = d => Math.floor((d.getMonth() / 3)) % 4
+  const season = ['winter', 'spring', 'summer', 'autumn'][getSeason(new Date())]
+  const [theme, setTheme] = useState(season); 
+  
   // The function that toggles between themes
   const toggleTheme = () => {
     // if the theme is not light, then set it to dark
