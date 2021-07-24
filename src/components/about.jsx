@@ -73,7 +73,7 @@ class About extends Component {
 
         <hr style={{ marginTop: "25px", marginBottom: "25px" }} />
 
-        <h2 id="about">About me 👋</h2>
+        <h2 id="about">About me</h2>
         <p>
           I am a member of <a className="link" href="https://www.palantir.com" target="_blank" rel="noopener noreferrer">
             🔮
