@@ -78,14 +78,12 @@ class About extends Component {
           I am a member of <a className="link" href="https://www.palantir.com" target="_blank" rel="noopener noreferrer">
             🔮
           </a>
-          's engineering team in Tokyo, soaking up as much knowledge and practice as I can to perfect my craft. I have experience with C++, Python/TensorFlow, Javascript/ReactJS, and recently started dabbling in Scala.
-          <br />
-          Prior to my current position, I was a
+          's engineering team in Tokyo. Prior to my current position, I was a
           Ph.D. student in Computer Science at the University of Tokyo with a
           concentration on training dynamics and generalization of deep neural
           networks.
           <br />
-          In my free time, I enjoy reading 📖 (especially about Psychology/Philosophy/Science), listening to audiobooks, playing music (singing/piano/composing), and taking long walks.
+          In my free time, I enjoy reading (especially about Psychology/Philosophy/Science), listening to audiobooks, playing music (singing/piano/composing), and taking long walks.
           <br />I speak English, Japanese, and Mandarin fluently.
         </p>
 
