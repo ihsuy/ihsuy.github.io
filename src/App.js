@@ -28,9 +28,7 @@ function App() {
   // Set theme automatically by current season
   const [theme, setTheme] = useState(season); 
   
-  // The function that toggles between themes
   const toggleTheme = () => {
-    // if the theme is not light, then set it to dark
     if (theme === "spring") {
       setTheme("summer");
     } else if (theme === "summer") {
