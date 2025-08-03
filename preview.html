@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yushi Qiu - Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .greeting {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .oneliner {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.5s forwards, bounce 2s infinite 2.5s;
+            cursor: pointer;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Work Experience Section */
+        .work-section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c3e50;
+        }
+
+        .experience-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 3rem;
+        }
+
+        .experience-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .media-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f3f4;
+            border-radius: 10px;
+            min-height: 200px;
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Fun Facts Section */
+        .fun-facts-section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            grid-auto-rows: minmax(200px, auto);
+        }
+
+        .grid-item {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .grid-item.large {
+            grid-row: span 2;
+        }
+
+        .grid-item.gradient-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .grid-item.gradient-2 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .grid-item.gradient-3 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .large-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .greeting {
+                font-size: 2.5rem;
+            }
+            
+            .oneliner {
+                font-size: 1.2rem;
+            }
+            
+            .experience-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <h1 class="greeting">Hi, I'm Yushi 👋</h1>
+        <p class="oneliner">A passionate developer crafting digital experiences with modern technologies</p>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="work-section">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="media-container">
+                    <div class="company-logo">TC</div>
+                </div>
+                <div>
+                    <h3 class="job-title">Senior Frontend Developer</h3>
+                    <h4 class="company">Tech Company</h4>
+                    <p class="duration">2021 - Present</p>
+                    <p class="description">Leading frontend development initiatives, building scalable React applications, and mentoring junior developers. Focused on creating exceptional user experiences with modern web technologies.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Styled Components</span>
+                        <span class="tech-tag">GraphQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-card">
+                <div class="media-container">
+                    <div class="company-logo">SI</div>
+                </div>
+                <div>
+                    <h3 class="job-title">Full Stack Developer</h3>
+                    <h4 class="company">Startup Inc</h4>
+                    <p class="duration">2019 - 2021</p>
+                    <p class="description">Developed end-to-end web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality products in an agile environment.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <h2 class="section-title">Fun Facts About Me</h2>
+        <div class="grid-container">
+            <div class="grid-item large gradient-1">
+                <img src="media/profile_picture.JPG" alt="Yushi Qiu" class="profile-image">
+                <h3 class="grid-title">Yushi Qiu</h3>
+                <p class="grid-subtitle">Full Stack Developer</p>
+            </div>
+            
+            <div class="grid-item">
+                <div class="icon">💻</div>
+                <div class="large-number">5+</div>
+                <h3 class="grid-title">Years of Experience</h3>
+                <p class="grid-subtitle">Building amazing web applications</p>
+            </div>
+            
+            <div class="grid-item">
+                <div class="icon">🚀</div>
+                <div class="large-number">50+</div>
+                <h3 class="grid-title">Projects Completed</h3>
+                <p class="grid-subtitle">From startups to enterprise</p>
+            </div>
+            
+            <div class="grid-item gradient-2">
+                <div class="icon">🎮</div>
+                <h3 class="grid-title">Gaming Enthusiast</h3>
+                <p class="grid-subtitle">Strategy games and indie titles are my favorites</p>
+            </div>
+            
+            <div class="grid-item gradient-3">
+                <div class="icon">📍</div>
+                <h3 class="grid-title">Based in</h3>
+                <p class="grid-subtitle">San Francisco, CA</p>
+            </div>
+            
+            <div class="grid-item">
+                <div class="icon">☕</div>
+                <div class="large-number">∞</div>
+                <h3 class="grid-title">Cups of Coffee</h3>
+                <p class="grid-subtitle">Fuel for coding sessions</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for the scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,78 +1,42 @@
-import React, { useState } from "react";
+import React from 'react';
+import './App.css';
+import Homepage from './components/Homepage';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './global';
 
-import "./App.css";
-import MyNavBar from "./components/navbar";
-import About from "./components/about";
-
-import { ThemeProvider } from "styled-components";
-import {
-  springTheme,
-  summerTheme,
-  autumnTheme,
-  winterTheme,
-  standardTheme,
-} from "./theme";
-
-import { GlobalStyles } from "./global";
+// Modern theme for the new design
+const modernTheme = {
+  colors: {
+    primary: '#667eea',
+    secondary: '#764ba2',
+    background: '#ffffff',
+    text: '#2c3e50',
+    lightGray: '#f8f9fa',
+    darkGray: '#6c757d'
+  },
+  fonts: {
+    primary: "'Inter', 'Segoe UI', 'Roboto', sans-serif",
+    heading: "'Inter', 'Segoe UI', 'Roboto', sans-serif"
+  },
+  breakpoints: {
+    mobile: '768px',
+    tablet: '1024px',
+    desktop: '1200px'
+  }
+};
 
 function App() {
-  // Get Season thru current month as follows (Northern Hemisphere):
-  // Winter: Dec 1st - Feb 28th
-  // Spring: March 1st - May 31th
-  // Summer: June 1st - August 31th
-  // Autumn: September 1st - November 30th
-
-  const getSeason = d => Math.floor((d.getMonth() / 3)) % 4
-  const season = ['winter', 'spring', 'summer', 'autumn'][getSeason(new Date())]
-
-  // Set theme automatically by current season
-  const [theme, setTheme] = useState(season); 
-  
-  const toggleTheme = () => {
-    if (theme === "spring") {
-      setTheme("summer");
-    } else if (theme === "summer") {
-      setTheme("autumn");
-    } else if (theme === "autumn") {
-      setTheme("winter");
-    } else if (theme === "winter") {
-      setTheme("standard");
-    } else {
-      setTheme("spring");
-    }
-  };
-
-  const getTheme = (theme) => {
-    return theme === "spring"
-      ? springTheme
-      : theme === "summer"
-      ? summerTheme
-      : theme === "autumn"
-      ? autumnTheme
-      : theme === "winter"
-      ? winterTheme
-      : standardTheme;
-  };
-
   return (
-    <ThemeProvider theme={getTheme(theme)}>
-      <div className="App">
+    <ThemeProvider theme={modernTheme}>
+      <>
         <GlobalStyles />
-        <div className="pos-f-t p-2 margin"></div>
-        <MyNavBar
-          onToggleTheme={toggleTheme}
-          theme={theme}
-          background={getTheme(theme).navbarBackground}
-          textColor={getTheme(theme).navbarTextColor}
-          textColorUnavailable={getTheme(theme).navbarTextColorUnavailable}
-        />
-        <div className="container">
-          <About theme={theme} />
+        <div className="App">
+          <Homepage />
         </div>
-        <div className="pos-f-t p-2 margin"><span className="copyright">©️ Yushi Qiu. All rights reserved.</span>
+        <div className="pos-f-t p-2 margin">
+          <span className="copyright">©️ Yushi Qiu. All rights reserved.</span>
         </div>
-        
-      </div>
+      </>
     </ThemeProvider>
   );
 }
