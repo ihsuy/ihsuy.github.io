@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Homepage from './components/Homepage';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';

@@ -1,12 +1,8 @@
 const reportWebVitals = onPerfEntry => {
+  // Simplified version without web-vitals dependency
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
+    // Performance metrics can be added here if needed
+    console.log('Performance monitoring disabled');
   }
 };
 
