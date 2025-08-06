@@ -1,6 +1,9 @@
 {
   "files": {
-    "main.js": "/static/js/main.bbe98d42.js",
+    "main.js": "/static/js/main.82fb5973.js",
+    "static/js/239.1399c4cf.chunk.js": "/static/js/239.1399c4cf.chunk.js",
+    "static/js/977.3876f564.chunk.js": "/static/js/977.3876f564.chunk.js",
+    "static/js/732.e92b121d.chunk.js": "/static/js/732.e92b121d.chunk.js",
     "static/media/puzzle.png": "/static/media/puzzle.c46f23a732fe9f5b32fd.png",
     "static/media/Wellbeing.png": "/static/media/Wellbeing.98ebc46a1221cf50c414.png",
     "static/media/profile_picture.JPG": "/static/media/profile_picture.30fccab6678c5fd2d87d.JPG",
@@ -9,9 +12,12 @@
     "static/media/suica.jpg": "/static/media/suica.1866efe0cd49f80bd3f7.jpg",
     "static/media/com_logo02.png": "/static/media/com_logo02.e6c7ff7037a3e48f4d82.png",
     "index.html": "/index.html",
-    "main.bbe98d42.js.map": "/static/js/main.bbe98d42.js.map"
+    "main.82fb5973.js.map": "/static/js/main.82fb5973.js.map",
+    "239.1399c4cf.chunk.js.map": "/static/js/239.1399c4cf.chunk.js.map",
+    "977.3876f564.chunk.js.map": "/static/js/977.3876f564.chunk.js.map",
+    "732.e92b121d.chunk.js.map": "/static/js/732.e92b121d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.bbe98d42.js"
+    "static/js/main.82fb5973.js"
   ]
 }

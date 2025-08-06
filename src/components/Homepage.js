@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import IntroSection from './IntroSection';
 import WorkExperience from './WorkExperience';
 import Education from './Education';
+import ResumeGenerator from './ResumeGenerator';
 
 const HomepageContainer = styled.div`
   width: 100%;
@@ -16,6 +17,7 @@ const Homepage = () => {
       <IntroSection />
       <WorkExperience />
       <Education />
+      <ResumeGenerator />
     </HomepageContainer>
   );
 };
