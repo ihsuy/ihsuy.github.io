@@ -487,7 +487,7 @@ const lineageEdgeIn = keyframes`
   100% { opacity: 0.5; }
 `;
 
-// Outer g carries the SVG transform="translate(...)" — never animated.
+// Outer g carries the SVG transform="translate(...)" - never animated.
 const LineageNodePos = styled.g`
   cursor: pointer;
 `;
@@ -646,11 +646,11 @@ const LINEAGE_NODES = [
     authors: 'Yushi Qiu · Reiji Suda',
     url: 'https://arxiv.org/abs/2003.02570',
     keyResult:
-      'Identified that information learned by SGD lives predominantly in weight ordering, not values (SoWP). Proposed the two-dimensions hypothesis and LaPerm — the first algorithm to train DNNs by permuting initial values without altering them.',
+      'Identified that information learned by SGD lives predominantly in weight ordering, not values (SoWP). Proposed the two-dimensions hypothesis and LaPerm - the first algorithm to train DNNs by permuting initial values without altering them.',
     label: 'Qiu & Suda',
     sub: '2020',
   },
-  // Hardware chain — Kuroda lab
+  // Hardware chain - Kuroda lab
   {
     id: 'hsu_22a',
     parent: 'root',
@@ -912,7 +912,7 @@ const LineageGraph = ({ visible }) => {
                       opacity="0.4"
                     />
                   )}
-                  {/* Filled dot — all nodes share the same visual treatment */}
+                  {/* Filled dot - all nodes share the same visual treatment */}
                   <circle
                     className="dot"
                     r={r}
@@ -996,7 +996,7 @@ const CollapseLink = styled.button`
 `;
 
 // ============================================================================
-//  Demo 1 — SoWP collapse
+//  Demo 1 - SoWP collapse
 // ============================================================================
 
 const N_PER_VECTOR = 56;
@@ -1110,13 +1110,13 @@ const SoWPDemo = ({ visible }) => {
 };
 
 // ============================================================================
-//  Demo 2 — Reconnection alone trains the network (weight-matrix view)
+//  Demo 2 - Reconnection alone trains the network (weight-matrix view)
 // ============================================================================
 //
 //  Each cell in the 5×5 grid IS one neural connection between input row i and
 //  output column j. Reconnection = a value physically moving from one cell to
 //  another. The trained matrix at the end is, visibly, a permutation of the
-//  initial random cells — same colors, new positions.
+//  initial random cells - same colors, new positions.
 
 const RC_GRID = 5;
 const RC_N_EDGES = RC_GRID * RC_GRID;
@@ -1150,7 +1150,7 @@ const bpNodeY = i =>
 // Spring (physical settling) + swap cadence
 const SPRING_STIFFNESS = 90;
 const SPRING_DAMPING = 14;
-// Cable control points — softer + bouncier for an elastic, wobbly (グニョグニョ) feel
+// Cable control points - softer + bouncier for an elastic, wobbly (グニョグニョ) feel
 const CTRL_STIFFNESS = 70;
 const CTRL_DAMPING = 7;
 const SWAP_COMMIT_MS = 240; // gap between committing successive swaps
@@ -1267,7 +1267,7 @@ const ReconnectDemo = ({ visible }) => {
   const weights = useMemo(generateRcWeights, [seed]);
   const [gridPos, setGridPos] = useState(identityGridPos);
 
-  // Animated (float) positions + velocities — the spring's display state.
+  // Animated (float) positions + velocities - the spring's display state.
   const displayRef = useRef(
     identityGridPos().map(p => ({ row: p.row, col: p.col }))
   );
@@ -1360,7 +1360,7 @@ const ReconnectDemo = ({ visible }) => {
     timeoutsRef.current = [];
   };
 
-  // Snap (no animation) — for reset / new init.
+  // Snap (no animation) - for reset / new init.
   const snapTo = positions => {
     clearPending();
     if (rafRef.current != null) {
@@ -1481,8 +1481,8 @@ const ReconnectDemo = ({ visible }) => {
           {searching
             ? 'Reconnecting…'
             : matched
-            ? 'Trained — output matches target'
-            : 'Untrained — output ≠ target'}
+            ? 'Trained - output matches target'
+            : 'Untrained - output ≠ target'}
         </StateLabel>
       </PlotHeader>
 
@@ -1546,7 +1546,7 @@ const ReconnectDemo = ({ visible }) => {
                 />
               );
             })}
-            {/* Cells — positioned from animated display state */}
+            {/* Cells - positioned from animated display state */}
             {weights.map((value, wId) => {
               const d = disp[wId];
               const cx = cellX(d.col) + RC_CELL / 2;
@@ -1611,7 +1611,7 @@ const ReconnectDemo = ({ visible }) => {
             <text x={BP_IN_X} y={24} fontSize="9" fill="#86868b" textAnchor="middle" fontFamily="inherit">inputs</text>
             <text x={BP_OUT_X} y={24} fontSize="9" fill="#86868b" textAnchor="middle" fontFamily="inherit">outputs · target</text>
 
-            {/* Cables — soft, wobbly: lagging control points make them bend
+            {/* Cables - soft, wobbly: lagging control points make them bend
                 and jiggle as they re-route, like living connections */}
             {weights.map((value, wId) => {
               const d = disp[wId];
@@ -1668,7 +1668,7 @@ const ReconnectDemo = ({ visible }) => {
         <LegendItem color="#3A85C7">negative weight</LegendItem>
         <LegendItem color="#CC785C">positive weight</LegendItem>
         <span style={{ color: '#86868b' }}>
-          same values, reconnected — a cell glides to a new slot; its cable end slides to the new neuron
+          same values, reconnected - a cell glides to a new slot; its cable end slides to the new neuron
         </span>
       </PlotLegend>
 
@@ -1696,7 +1696,7 @@ const ReconnectDemo = ({ visible }) => {
 };
 
 // ============================================================================
-//  Container — teaser + collapsible body
+//  Container - teaser + collapsible body
 // ============================================================================
 
 const MiniPreview = ({ phase }) => {
@@ -1770,9 +1770,9 @@ const TrainByReconnectDemo = () => {
         </TeaserPreview>
         <TeaserText>
           <TeaserEyebrow>Interactive · NeurIPS 2020</TeaserEyebrow>
-          <TeaserTitle>Train by Reconnect — see the idea in motion</TeaserTitle>
+          <TeaserTitle>Train by Reconnect - see the idea in motion</TeaserTitle>
           <TeaserSubtitle>
-            Two short demos — the observation, and how reconnection alone trains a network.
+            Two short demos - the observation, and how reconnection alone trains a network.
           </TeaserSubtitle>
         </TeaserText>
         <TeaserArrow>{expanded ? '↑' : '→'}</TeaserArrow>
@@ -1801,7 +1801,7 @@ const TrainByReconnectDemo = () => {
             <Subhead>
               If the information lives in the order, a different <em>assignment</em> of the same
               initial values to a network's connections should already be enough to train. Below
-              is a 5×5 weight matrix — each cell is one connection. Reconnection moves a cell to a
+              is a 5×5 weight matrix - each cell is one connection. Reconnection moves a cell to a
               new position. No value is ever changed; the trained matrix is, visibly, a
               <em> permutation of the random init</em>.
             </Subhead>
@@ -1810,8 +1810,8 @@ const TrainByReconnectDemo = () => {
             <ImpactCard>
               <ImpactLabel>Where it led</ImpactLabel>
               <ImpactBody>
-                This conceptual decoupling — separating <em>what</em> a weight is from <em>where</em>{' '}
-                it sits — contributed to a research direction in fixed-weight physical AI
+                This conceptual decoupling - separating <em>what</em> a weight is from <em>where</em>{' '}
+                it sits - contributed to a research direction in fixed-weight physical AI
                 substrates. Downstream work in that direction has demonstrated up to <strong>238×
                 energy efficiency gains</strong> over conventional FPGA-based inference at matched
                 accuracy.
@@ -1840,7 +1840,7 @@ const TrainByReconnectDemo = () => {
               stand-in for trained-network weight vectors; the paper shows real layers
               (ResNet, VGG, MobileNet, NASNet) exhibit the same collapse when sorted. The 5×5
               network in ② uses a fixed input pattern; <em>Reconnect to train</em> runs a
-              short random-swap search over edge assignments — no weight value ever changes.
+              short random-swap search over edge assignments - no weight value ever changes.
             </Footnote>
 
             <CollapseRow>

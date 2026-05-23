@@ -298,7 +298,7 @@ function IntroSection() {
           </SocialIcons>
         </GreetingContainer>
         <Description>
-         Hi 👋 I’m Yushi Chonan (Qiu), an engineer in Tokyo who loves building practical data/AI solutions for real-world problems. I joined Anthropic as a member of technical staff in 2026. Before that, I spent five years at Palantir building Japan’s commercial operation from scratch—helping teams turn big ideas into useful software across factories, logistics, supply chain, telco, elderly care, and disaster response. I'm happiest when I’m learning, writing, tinkering, and making things that give people agency, keep them thinking, and actually help.
+         Hi 👋 I’m Yushi Chonan (Qiu), an engineer in Tokyo who loves building practical data/AI solutions for real-world problems. I joined Anthropic as a member of technical staff in 2026. Before that, I spent five years at Palantir building Japan’s commercial business from the ground up, helping teams turn big ideas into useful software across factories, logistics, supply chain, telco, elderly care, and disaster response. I'm happiest when I’m learning, writing, tinkering, and making things that give people more agency, keep them curious, and genuinely help.
         </Description>
         <ProfilePictureContainer>
           <ProfilePicture 
@@ -315,7 +315,7 @@ function IntroSection() {
               top: `${mousePosition.y}px`
             }}
           >
-            Snapped by my friend Akil during a customer visit in Kuala Lumpur—this was at the National Museum of Malaysia, where we took a little detour for some culture
+            Snapped by my friend Akil during a customer visit in Kuala Lumpur-this was at the National Museum of Malaysia, where we took a little detour for some culture
           </Tooltip>
         </ProfilePictureContainer>
       </ContentWrapper>
