@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import TbCconnect from '../media/connect.png';
 import puzzle from '../media/puzzle.png';
 import bicg from '../media/bicg.png';
+import TrainByReconnectDemo from './TrainByReconnectDemo';
 
 // Rich text parser for embedded links in descriptions
 const parseRichText = (text) => {
@@ -171,6 +172,22 @@ const PublicationTitle = styled.h6`
   line-height: 1.4;
 `;
 
+const VenueChip = styled.span`
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5D2A82;
+  background: rgba(93, 42, 130, 0.08);
+  border: 1px solid rgba(93, 42, 130, 0.18);
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+`;
+
 const PublicationDescription = styled.p`
   font-size: 0.8rem;
   color: #666666;
@@ -240,7 +257,9 @@ const Education = () => {
           title: "Train-by-Reconnect: Decoupling Locations of Weights from their Values",
           description: "In Proceedings of NeurIPS 2020",
           link: "https://papers.nips.cc/paper/2020/hash/f0682320ccbbb1f1fb1e795de5e5639a-Abstract.html",
-          image: TbCconnect
+          image: TbCconnect,
+          demo: 'train-by-reconnect',
+          venue: 'NeurIPS 2020',
         },
       ]
     },
@@ -292,22 +311,26 @@ const Education = () => {
                 <PublicationsContainer>
                   <PublicationsTitle>Publications</PublicationsTitle>
                   {edu.publications.map((pub, pubIndex) => (
-                    <PublicationItem key={pubIndex}>
-                      <PublicationImage src={pub.image} alt={pub.title} />
-                      <PublicationContent>
-                        <PublicationTitle>{pub.title}</PublicationTitle>
-                        {pub.description && (
-                          <PublicationDescription>
-                            <RichText text={pub.description} />
-                          </PublicationDescription>
-                        )}
-                        {pub.link && (
-                          <PublicationLink href={pub.link} target="_blank" rel="noopener noreferrer">
-                            View Paper →
-                          </PublicationLink>
-                        )}
-                      </PublicationContent>
-                    </PublicationItem>
+                    <React.Fragment key={pubIndex}>
+                      <PublicationItem>
+                        <PublicationImage src={pub.image} alt={pub.title} />
+                        <PublicationContent>
+                          {pub.venue && <VenueChip>{pub.venue}</VenueChip>}
+                          <PublicationTitle>{pub.title}</PublicationTitle>
+                          {pub.description && (
+                            <PublicationDescription>
+                              <RichText text={pub.description} />
+                            </PublicationDescription>
+                          )}
+                          {pub.link && (
+                            <PublicationLink href={pub.link} target="_blank" rel="noopener noreferrer">
+                              View Paper →
+                            </PublicationLink>
+                          )}
+                        </PublicationContent>
+                      </PublicationItem>
+                      {pub.demo === 'train-by-reconnect' && <TrainByReconnectDemo />}
+                    </React.Fragment>
                   ))}
                 </PublicationsContainer>
               )}

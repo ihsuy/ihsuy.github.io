@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.bbe98d42.js",
+    "main.js": "/static/js/main.16ea324b.js",
     "static/media/puzzle.png": "/static/media/puzzle.c46f23a732fe9f5b32fd.png",
     "static/media/Wellbeing.png": "/static/media/Wellbeing.98ebc46a1221cf50c414.png",
     "static/media/profile_picture.JPG": "/static/media/profile_picture.30fccab6678c5fd2d87d.JPG",
     "static/media/connect.png": "/static/media/connect.c022f2e74241c864e1df.png",
     "static/media/bicg.png": "/static/media/bicg.d4894c6cfeda70764a30.png",
     "static/media/suica.jpg": "/static/media/suica.1866efe0cd49f80bd3f7.jpg",
+    "static/media/utokyo.png": "/static/media/utokyo.dd8bb2daf7f0e633ff41.png",
     "static/media/com_logo02.png": "/static/media/com_logo02.e6c7ff7037a3e48f4d82.png",
+    "static/media/daimler.svg": "/static/media/daimler.952f05b5b00719dc1d5613553eaa9540.svg",
     "index.html": "/index.html",
-    "main.bbe98d42.js.map": "/static/js/main.bbe98d42.js.map"
+    "static/media/palantir.svg": "/static/media/palantir.ed45f602b201b630ee0b5087ab9b60da.svg",
+    "main.16ea324b.js.map": "/static/js/main.16ea324b.js.map"
   },
   "entrypoints": [
-    "static/js/main.bbe98d42.js"
+    "static/js/main.16ea324b.js"
   ]
 }

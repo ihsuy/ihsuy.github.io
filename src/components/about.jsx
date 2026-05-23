@@ -52,7 +52,7 @@ class About extends Component {
     return (
       <React.Fragment>
         <h1>
-          Yushi Qiu
+          Yushi Chonan <span style={{ fontSize: "0.6em", opacity: 0.7 }}>(Qiu)</span>
           <a className="link" href="https://github.com/ihsuy" target="_blank" rel="noopener noreferrer">
             <i
               className="fa fa-github"
@@ -69,19 +69,23 @@ class About extends Component {
           </a>
         </h1>
         <p className="affiliation">
-            Engineering @🔮 in 🗼</p>
+            Member of Technical Staff @ Anthropic in 🗼</p>
 
         <hr style={{ marginTop: "25px", marginBottom: "25px" }} />
 
         <h2 id="about">About me</h2>
         <p>
-          I am a member of <a className="link" href="https://www.palantir.com" target="_blank" rel="noopener noreferrer">
-            🔮
+          I am a Member of Technical Staff at <a className="link" href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">
+            Anthropic
           </a>
-          's engineering team in Tokyo. Prior to my current position, I was a
-          Ph.D. student in Computer Science at the University of Tokyo with a
+          , based in Tokyo. Previously, I was the Enterprise Tech Lead for Japan Commercial at <a className="link" href="https://www.palantir.com" target="_blank" rel="noopener noreferrer">
+            Palantir
+          </a>
+          {" "}(2021–2026). Before that, I was a Ph.D. student in Computer Science at the University of Tokyo with a
           concentration on training dynamics and generalization of deep neural
           networks.
+          <br />
+          <em>Note: my legal name is now Yushi Chonan; my prior publications, work, and many of my customers know me as Yushi Qiu.</em>
           <br />
           In my free time, I enjoy reading (especially about Psychology/Philosophy/Science), listening to audiobooks, playing music (singing/piano/composing), and taking long walks.
           <br />I speak English, Japanese, and Mandarin fluently.

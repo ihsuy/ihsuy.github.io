@@ -33,7 +33,7 @@ function App() {
           <Homepage />
         </div>
         <div className="pos-f-t p-2 margin">
-          <span className="copyright">©️ Yushi Qiu. All rights reserved.</span>
+          <span className="copyright">©️ Yushi Chonan. All rights reserved.</span>
         </div>
       </>
     </ThemeProvider>

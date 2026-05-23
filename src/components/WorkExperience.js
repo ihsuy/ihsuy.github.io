@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import suicaImage from '../media/suica.jpg';
 import yamatoImage from '../media/com_logo02.png';
 import wellbeingImage from '../media/Wellbeing.png';
+import anthropicLogo from '../media/logos/anthropic.png';
+import palantirLogo from '../media/logos/palantir.svg';
+import utokyoLogo from '../media/logos/utokyo.png';
+import daimlerLogo from '../media/logos/daimler.svg';
 
 // Rich text parser for embedded links in descriptions (reused from Education)
 const parseRichText = (text) => {
@@ -155,13 +159,40 @@ const LinkButton = styled.a`
 
 const CompanyHeader = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
   margin-bottom: 0.6rem;
+`;
+
+const CompanyHeaderText = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+`;
+
+const CompanyLogo = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border-radius: 6px;
+  overflow: hidden;
+
+  svg, img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
 `;
 
 const CompanyName = styled.h3`
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #000000;
   margin-bottom: 0.15rem;
   letter-spacing: -0.01em;
@@ -354,9 +385,12 @@ const calculateTenure = (duration) => {
   } else {
     const wholeYears = Math.floor(years);
     const remainingMonths = Math.round((years - wholeYears) * 12);
-    
+
     if (remainingMonths === 0) {
       return `${wholeYears} year${wholeYears !== 1 ? 's' : ''}`;
+    } else if (remainingMonths >= 9) {
+      const rounded = wholeYears + 1;
+      return `${rounded} year${rounded !== 1 ? 's' : ''}`;
     } else {
       return `${wholeYears}.${remainingMonths} years`;
     }
@@ -390,14 +424,52 @@ const RichText = ({ text, className }) => {
   );
 };
 
+const getCompanyLogo = (company) => {
+  if (company.includes("Anthropic")) {
+    return <img src={anthropicLogo} alt="Anthropic" />;
+  }
+  if (company.includes("Palantir")) {
+    return <img src={palantirLogo} alt="Palantir" />;
+  }
+  if (company.includes("Microsoft")) {
+    return (
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft">
+        <rect x="1" y="1" width="10" height="10" fill="#F25022" />
+        <rect x="13" y="1" width="10" height="10" fill="#7FBA00" />
+        <rect x="1" y="13" width="10" height="10" fill="#00A4EF" />
+        <rect x="13" y="13" width="10" height="10" fill="#FFB900" />
+      </svg>
+    );
+  }
+  if (company.includes("Tokyo")) {
+    return <img src={utokyoLogo} alt="The University of Tokyo" />;
+  }
+  if (company.includes("Daimler")) {
+    return <img src={daimlerLogo} alt="Daimler" />;
+  }
+  return null;
+};
+
 const WorkExperience = () => {
   const experiences = [
     {
-      company: "Palantir Technologies",
-      duration: "Jul 2021 - Present",
+      company: "Anthropic PBC",
+      duration: "Apr 2026 - Present",
       roles: [
         {
-          title: "Technical Lead, Japan New Ventures",
+          title: "Member of Technical Staff",
+          description: "Building frontier AI systems at Anthropic, and establishing the Forward Deployed Engineering (FDE) motion in Japan and APAC.",
+        }
+      ],
+      link: "https://www.anthropic.com",
+      companyInitial: "A"
+    },
+    {
+      company: "Palantir Technologies",
+      duration: "May 2021 - Apr 2026",
+      roles: [
+        {
+          title: "Enterprise Tech Lead, Japan Commercial",
           description: "As Palantir Japan’s first locally hired Forward Deployed Engineer, I’ve led the integration of Palantir’s technology and culture into Japan’s complex enterprise landscape. Starting from Palantir Japan's earliest pilots, I’ve led the expansion of our organic customer base from zero to a dozen in three years and developed a sales pipeline generating a steady stream of annual recurring revenue.",
           workItems: [
             {
@@ -472,13 +544,16 @@ const WorkExperience = () => {
         {experiences.map((exp, index) => (
           <ExperienceCard key={index}>
             <CompanyHeader>
-              <CompanyName>{exp.company}</CompanyName>
-              <CompanyDuration>
-                <span>{exp.duration}</span>
-                {calculateTenure(exp.duration) && (
-                  <TenureBadge>{calculateTenure(exp.duration)}</TenureBadge>
-                )}
-              </CompanyDuration>
+              <CompanyLogo>{getCompanyLogo(exp.company)}</CompanyLogo>
+              <CompanyHeaderText>
+                <CompanyName>{exp.company}</CompanyName>
+                <CompanyDuration>
+                  <span>{exp.duration}</span>
+                  {calculateTenure(exp.duration) && (
+                    <TenureBadge>{calculateTenure(exp.duration)}</TenureBadge>
+                  )}
+                </CompanyDuration>
+              </CompanyHeaderText>
             </CompanyHeader>
             
             <RolesList>

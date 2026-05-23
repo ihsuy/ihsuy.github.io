@@ -298,12 +298,12 @@ function IntroSection() {
           </SocialIcons>
         </GreetingContainer>
         <Description>
-         Hi 👋 I’m Yushi, an engineer in Tokyo who loves building practical data/AI solutions for real-world problems. These days, I work at Palantir, helping teams turn big ideas into useful software—whether it's for factories, logistics, supply chain, elderly care, disaster response, or something totally new. I'm happiest when I’m learning, tinkering, and making things that actually help people.
+         Hi 👋 I’m Yushi Chonan (Qiu), an engineer in Tokyo who loves building practical data/AI solutions for real-world problems. I joined Anthropic as a member of technical staff in 2026. Before that, I spent five years at Palantir building Japan’s commercial operation from scratch—helping teams turn big ideas into useful software across factories, logistics, supply chain, telco, elderly care, and disaster response. I'm happiest when I’m learning, writing, tinkering, and making things that give people agency, keep them thinking, and actually help.
         </Description>
         <ProfilePictureContainer>
           <ProfilePicture 
             src={profilePicture} 
-            alt="Yushi Qiu"
+            alt="Yushi Chonan (formerly Yushi Qiu)"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onMouseMove={handleMouseMove}
