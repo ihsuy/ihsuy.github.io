@@ -16,15 +16,30 @@ const IntroContainer = styled.section`
 
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 800px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+  max-width: 1080px;
   width: 100%;
-  
+
   @media (max-width: 768px) {
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1.5rem;
+  }
+`;
+
+const TextCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  @media (max-width: 768px) {
+    align-items: center;
   }
 `;
 
@@ -104,46 +119,46 @@ const SocialLink = styled.a`
 `;
 
 const Description = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.02rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.55;
   color: #333333;
   letter-spacing: 0.01em;
-  max-width: 500px;
-  margin-bottom: 2rem;
-  
+  max-width: 640px;
+  margin: 0;
+
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.95rem;
     max-width: 100%;
   }
 `;
 
 const ProfilePictureContainer = styled.div`
   position: relative;
-  margin-top: 2rem;
-  
+  flex-shrink: 0;
+
   @media (max-width: 768px) {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
   }
 `;
 
 const ProfilePicture = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
-  
+
   &:hover {
     transform: scale(1.05);
   }
-  
+
   @media (max-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 `;
 
@@ -276,6 +291,7 @@ function IntroSection() {
   return (
     <IntroContainer>
       <ContentWrapper>
+        <TextCol>
         <GreetingContainer>
           <AnimatedGreeting
             className={isChanging ? 'changing' : ''}
@@ -300,6 +316,7 @@ function IntroSection() {
         <Description>
           Hi 👋 I'm Yushi Chonan (aka Yushi Qiu), based in Tokyo and working at Anthropic as a member of technical staff. I'm passionate about using engineering to get things done, and what gives me the most energy is seeing whether what I build changes anything real - for a team, a company, or a person trying to do their job. Before Anthropic, I spent five years at Palantir building Japan's commercial business from scratch, working closely with teams across manufacturing, logistics, supply chain, telecom, elderly care, and disaster response - finding where technology could genuinely help, then making it work in practice, which was as much about trust and understanding as it was about code. I joined Anthropic because I was moved by the integrity people hold themselves to, and because I believe the most important leverage point right now is at the model layer - I want to be close to that work while helping bring it to the people and organizations who can use it well and safely. I'm happiest when I'm learning something real and hard, working with low-ego people who push back to protect what they hold firmly true, and building toward something great and sustainable together.
         </Description>
+        </TextCol>
         <ProfilePictureContainer>
           <ProfilePicture 
             src={profilePicture} 

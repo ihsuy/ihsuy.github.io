@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.d878dcb6.js",
+    "main.js": "/static/js/main.9e1f323a.js",
     "static/media/puzzle.png": "/static/media/puzzle.c46f23a732fe9f5b32fd.png",
     "static/media/Wellbeing.png": "/static/media/Wellbeing.98ebc46a1221cf50c414.png",
     "static/media/profile_picture.JPG": "/static/media/profile_picture.30fccab6678c5fd2d87d.JPG",
@@ -12,9 +12,9 @@
     "static/media/daimler.svg": "/static/media/daimler.952f05b5b00719dc1d5613553eaa9540.svg",
     "index.html": "/index.html",
     "static/media/palantir.svg": "/static/media/palantir.ed45f602b201b630ee0b5087ab9b60da.svg",
-    "main.d878dcb6.js.map": "/static/js/main.d878dcb6.js.map"
+    "main.9e1f323a.js.map": "/static/js/main.9e1f323a.js.map"
   },
   "entrypoints": [
-    "static/js/main.d878dcb6.js"
+    "static/js/main.9e1f323a.js"
   ]
 }
