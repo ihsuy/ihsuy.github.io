@@ -12,6 +12,13 @@ const IntroContainer = styled.section`
   color: #000000;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding: 3.5rem 1.5rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -119,16 +126,16 @@ const SocialLink = styled.a`
 `;
 
 const Description = styled.p`
-  font-size: 1.02rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  line-height: 1.55;
+  line-height: 1.6;
   color: #333333;
   letter-spacing: 0.01em;
-  max-width: 640px;
+  max-width: 580px;
   margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 0.95rem;
+    font-size: 1rem;
     max-width: 100%;
   }
 `;
@@ -138,7 +145,9 @@ const ProfilePictureContainer = styled.div`
   flex-shrink: 0;
 
   @media (max-width: 768px) {
-    margin-top: 0.5rem;
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -314,7 +323,7 @@ function IntroSection() {
           </SocialIcons>
         </GreetingContainer>
         <Description>
-          Hi 👋 I'm Yushi Chonan (aka Yushi Qiu), based in Tokyo and working at Anthropic as a member of technical staff. I'm passionate about using engineering to get things done, and what gives me the most energy is seeing whether what I build changes anything real - for a team, a company, or a person trying to do their job. Before Anthropic, I spent five years at Palantir building Japan's commercial business from scratch, working closely with teams across manufacturing, logistics, supply chain, telecom, elderly care, and disaster response - finding where technology could genuinely help, then making it work in practice, which was as much about trust and understanding as it was about code. I joined Anthropic because I was moved by the integrity people hold themselves to, and because I believe the most important leverage point right now is at the model layer - I want to be close to that work while helping bring it to the people and organizations who can use it well and safely. I'm happiest when I'm learning something real and hard, working with low-ego people who push back to protect what they hold firmly true, and building toward something great and sustainable together.
+          Hi 👋 I'm Yushi Chonan (aka Yushi Qiu), based in Tokyo, working at Anthropic as a member of technical staff. I'm passionate about using engineering to get things done - what gives me energy is whether what I build changes anything real for a team, a company, or a person trying to do their job. Before Anthropic, I spent five years at Palantir building Japan's commercial business from scratch, across manufacturing, logistics, fleet management, telecom, insurance, elderly care, and disaster response. That work taught me it's as much about trust and understanding as it is about code. I joined Anthropic because the most important leverage point right now is at the model layer, and I want to help bring that work to the people and organizations so they can use it well and safely. I'm happiest learning something hard, working with low-ego people willing to fight for what they believe in, and building toward something that lasts.
         </Description>
         </TextCol>
         <ProfilePictureContainer>
