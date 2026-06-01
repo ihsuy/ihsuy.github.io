@@ -222,15 +222,6 @@ const ScrollIndicator = styled.div`
   }
 `;
 
-const ScrollText = styled.span`
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: #666666;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-`;
-
 const ScrollArrow = styled.div`
   width: 24px;
   height: 24px;

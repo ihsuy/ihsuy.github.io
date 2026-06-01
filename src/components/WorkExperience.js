@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import suicaImage from '../media/suica.jpg';
-import yamatoImage from '../media/com_logo02.png';
-import wellbeingImage from '../media/Wellbeing.png';
 import anthropicLogo from '../media/logos/anthropic.png';
 import palantirLogo from '../media/logos/palantir.svg';
 import utokyoLogo from '../media/logos/utokyo.png';
@@ -77,83 +74,6 @@ const ExperienceCard = styled.div`
   
   @media (max-width: 768px) {
     padding: 0.6rem 0;
-  }
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const JobTitle = styled.h3`
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: #000000;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-`;
-
-const Company = styled.h4`
-  font-size: 1rem;
-  font-weight: 300;
-  color: #4CAF50; /* Summer green accent */
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-`;
-
-const Duration = styled.p`
-  font-size: 0.9rem;
-  color: #999999;
-  margin-bottom: 2rem;
-  font-weight: 300;
-`;
-
-const Description = styled.p`
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #666666;
-  margin-bottom: 2rem;
-  max-width: 600px;
-`;
-
-const TechStack = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-`;
-
-const TechTag = styled.span`
-  color: #000000;
-  font-size: 0.85rem;
-  font-weight: 300;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #e0e0e0;
-  transition: border-color 0.3s ease;
-  
-  &:hover {
-    border-color: #2196F3; /* Summer blue accent */
-  }
-`;
-
-const LinkButton = styled.a`
-  display: inline-block;
-  margin-top: 1rem;
-  color: #000000;
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #4CAF50; /* Summer green accent */
-  transition: all 0.3s ease;
-  width: fit-content;
-  
-  &:hover {
-    color: #4CAF50;
-    text-decoration: none;
   }
 `;
 
