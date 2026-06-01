@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e33b4fb8.css",
-    "main.js": "/static/js/main.26574c56.js",
+    "main.js": "/static/js/main.0b5feefc.js",
     "static/media/puzzle.png": "/static/media/puzzle.c46f23a732fe9f5b32fd.png",
     "static/media/Wellbeing.png": "/static/media/Wellbeing.98ebc46a1221cf50c414.png",
     "static/media/profile_picture.JPG": "/static/media/profile_picture.30fccab6678c5fd2d87d.JPG",
@@ -74,10 +74,10 @@
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "static/media/palantir.svg": "/static/media/palantir.ed45f602b201b630ee0b5087ab9b60da.svg",
     "main.e33b4fb8.css.map": "/static/css/main.e33b4fb8.css.map",
-    "main.26574c56.js.map": "/static/js/main.26574c56.js.map"
+    "main.0b5feefc.js.map": "/static/js/main.0b5feefc.js.map"
   },
   "entrypoints": [
     "static/css/main.e33b4fb8.css",
-    "static/js/main.26574c56.js"
+    "static/js/main.0b5feefc.js"
   ]
 }
