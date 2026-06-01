@@ -97,6 +97,18 @@
     />
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script>
+      // Restore path from GitHub Pages 404 redirect
+      (function() {
+        var p = window.location.search.match(/[?&]p=([^&]+)/);
+        if (p) {
+          window.history.replaceState(
+            null, null,
+            decodeURIComponent(p[1]) + window.location.hash
+          );
+        }
+      })();
+    </script>
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body data-spy="scroll" data-target="#my-navbar" className="App">

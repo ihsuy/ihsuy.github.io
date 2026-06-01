@@ -49,7 +49,7 @@ class MyNavBar extends Component {
               <Nav.Link href="#contact" style={{ color: this.props.textColor }}>
                 Contact
               </Nav.Link>
-              <Nav.Link href="#Blog" style={{ color: this.props.textColorUnavailable }}>
+              <Nav.Link href="/blog" style={{ color: this.props.textColor }}>
                 Blog
               </Nav.Link>
               {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
